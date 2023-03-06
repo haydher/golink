@@ -1,4 +1,5 @@
 import React from "react";
+import Card from "../Card";
 
 type Props = {
   state?: "error" | "loading" | "success";
@@ -12,7 +13,7 @@ export default function Repository({ state }: Props): JSX.Element | null {
   return (
     <React.Fragment>
       {[1, 2, 3, 4].map((result) => (
-        <div className="border p-4 rounded-lg mb-4" key={result}>
+        <Card key={result}>
           <div className="flex justify-between items-center">
             <div className="animate-pulse h-4 w-24 bg-gray-400 rounded-lg"></div>
 
@@ -33,7 +34,7 @@ export default function Repository({ state }: Props): JSX.Element | null {
 
             <div className="animate-pulse h-4 w-8 bg-gray-400 rounded-lg"></div>
           </div>
-        </div>
+        </Card>
       ))}
     </React.Fragment>
   );

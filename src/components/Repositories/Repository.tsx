@@ -1,5 +1,6 @@
 import { formatDate } from "../../utils";
 import { Link } from "react-router-dom";
+import Card from "../Card";
 
 type Props = {
   readonly createdAt: string;
@@ -14,13 +15,13 @@ type Props = {
 
 export default function Repository(props: Props): JSX.Element {
   return (
-    <div className="border p-4 rounded-lg mb-4">
+    <Card>
       <div className="flex justify-between items-center">
         <div className="flex items-center">
           <Link to={`/${props.owner}/commits/${props?.name}`}>
             <h1 className="font-medium mr-4 hover:underline">{props?.name}</h1>
           </Link>
-          <p className="flex justify-center align-middle py-2 px-6 border rounded-full text-xs">PUBLIC</p>
+          <p className="flex justify-center items-center py-2 px-6 border rounded-full text-xs">PUBLIC</p>
         </div>
 
         <div className="flex items-center">
@@ -47,6 +48,6 @@ export default function Repository(props: Props): JSX.Element {
 
         <p>{formatDate(props.createdAt)}</p>
       </div>
-    </div>
+    </Card>
   );
 }
