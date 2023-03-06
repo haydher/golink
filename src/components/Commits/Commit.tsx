@@ -1,4 +1,5 @@
 import { formatDate } from "../../utils";
+import Card from "../Card";
 
 type Props = {
   readonly author: string;
@@ -10,7 +11,7 @@ type Props = {
 
 export default function Commit({ sha, author, message, date, avatar }: Props) {
   return (
-    <div className="p-4 border rounded-lg mb-4">
+    <Card>
       <div className="flex justify-between items-center">
         <div className="flex items-center mb-2">
           <img alt="user's avatar" className="mr-2 h-8 rounded-full" src={avatar} />
@@ -22,6 +23,6 @@ export default function Commit({ sha, author, message, date, avatar }: Props) {
 
       <p className="mb-2">{message}</p>
       <p className="font-light text-sm">{sha}</p>
-    </div>
+    </Card>
   );
 }
