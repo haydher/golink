@@ -33,7 +33,7 @@ export default function Header() {
   }, [org]);
 
   return (
-    <div className="flex justify-between py-4">
+    <div className="flex justify-between items-center py-6">
       <div className="flex items-center">
         <img alt="App logo" className="mr-2 h-12 w-12" src={organization?.avatar} />
         <h1 className="font-medium text-xl">{organization?.name ?? org}</h1>
