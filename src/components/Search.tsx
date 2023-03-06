@@ -64,7 +64,7 @@ export default function Search(): JSX.Element {
     }
 
     return (
-      <ul className="absolute -top-100 w-full bg-slate-200 rounded-lg p-2 h-72 overflow-auto">
+      <ul className="absolute -top-100 w-full bg-slate-200 rounded-lg p-2 h-72 overflow-auto shadow-xl">
         {results.map((result) => {
           return (
             <Link to={`/${result.name}`} key={result.id}>
@@ -90,7 +90,7 @@ export default function Search(): JSX.Element {
     >
       <input
         placeholder="Search Organizations..."
-        className="border border-gray-900 rounded-md p-1 px-2 mb-2 w-full"
+        className="border-0 border-gray-900 rounded-md p-2 px-2 mb-2 w-full"
         onChange={(event) => handleChange(event)}
         type="search"
         value={search}
